@@ -1,0 +1,12 @@
+[package]
+name = "rtnw-rs"
+version = "0.1.0"
+authors = ["blackspotbear <blackspotbear@users.noreply.github.com>"]
+edition = "2018"
+
+[dependencies]
+clap = "2.32.0"
+image = "0.20.1"
+rand = "0.6.1"
+cgmath = "0.16.1"
+pbr = "1.0.1"
