@@ -15,13 +15,13 @@ use super::super::material::Isotropic;
 use super::super::texture::Texture;
 
 pub struct ConstantMedium {
-    pub boundary: Box<Hitable>,
+    pub boundary: Box<dyn Hitable>,
     pub density: f32,
-    pub phase_function: Rc<Material>
+    pub phase_function: Rc<dyn Material>
 }
 
 impl ConstantMedium {
-    pub fn new(b: Box<Hitable>, d: f32, a: Box<Texture>) -> Self {
+    pub fn new(b: Box<dyn Hitable>, d: f32, a: Box<dyn Texture>) -> Self {
         Self {
             boundary: b,
             density: d,

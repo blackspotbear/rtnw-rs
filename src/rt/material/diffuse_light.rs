@@ -9,7 +9,7 @@ use super::super::texture::Texture;
 
 
 pub struct DiffuseLight {
-    pub emit: Box<Texture>
+    pub emit: Box<dyn Texture>
 }
 
 impl Material for DiffuseLight {

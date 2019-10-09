@@ -9,14 +9,14 @@ use super::super::renderer::HitRecord;
 use super::super::renderer::AABB;
 
 pub struct RotateY {
-    pub ptr: Box<Hitable>,
+    pub ptr: Box<dyn Hitable>,
     pub sin_theta: f32,
     pub cos_theta: f32,
     pub bbox: Option<AABB>
 }
 
 impl RotateY {
-    pub fn new(p: Box<Hitable>, angle: f32) -> Self {
+    pub fn new(p: Box<dyn Hitable>, angle: f32) -> Self {
         use std::f32::consts::PI;
         let radians = (PI / 180.0) * angle;
         let sin_theta = radians.sin();

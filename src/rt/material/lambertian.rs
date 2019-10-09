@@ -9,7 +9,7 @@ use super::super::texture::Texture;
 use super::super::math::*;
 
 pub struct Lambertian {
-    pub albedo: Box<Texture>
+    pub albedo: Box<dyn Texture>
 }
 
 impl Material for Lambertian {

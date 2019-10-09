@@ -4,12 +4,12 @@ use cgmath::Vector3;
 use super::texture::Texture;
 
 pub struct CheckerTexture {
-    pub odd: Box<Texture>,
-    pub even: Box<Texture>
+    pub odd: Box<dyn Texture>,
+    pub even: Box<dyn Texture>
 }
 
 impl CheckerTexture {
-    pub fn new(t0: Box<Texture>, t1: Box<Texture>) -> Self {
+    pub fn new(t0: Box<dyn Texture>, t1: Box<dyn Texture>) -> Self {
         CheckerTexture { odd: t0, even: t1 }
     }
 }

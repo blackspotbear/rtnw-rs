@@ -4,7 +4,7 @@ use super::hit_record::HitRecord;
 use super::aabb::AABB;
 
 pub struct HitableList {
-    pub hitable: Vec<Box<Hitable>>
+    pub hitable: Vec<Box<dyn Hitable>>
 }
 
 impl HitableList {

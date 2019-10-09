@@ -17,11 +17,11 @@ use super::utils::get_sphere_uv;
 pub struct Sphere {
     pub center: Vector3<f32>,
     pub radius: f32,
-    pub mat: Rc<Material>
+    pub mat: Rc<dyn Material>
 }
 
 impl Sphere {
-    pub fn new(center: Vector3<f32>, radius: f32, mat: Rc<Material>) -> Self {
+    pub fn new(center: Vector3<f32>, radius: f32, mat: Rc<dyn Material>) -> Self {
         Sphere { center: center, radius: radius, mat: mat }
     }
 

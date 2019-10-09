@@ -9,11 +9,11 @@ use super::super::texture::Texture;
 use super::super::math::*;
 
 pub struct Isotropic {
-    pub albedo: Box<Texture>
+    pub albedo: Box<dyn Texture>
 }
 
 impl Isotropic {
-    pub fn new(a: Box<Texture>) -> Self {
+    pub fn new(a: Box<dyn Texture>) -> Self {
         Isotropic {
             albedo: a
         }

@@ -21,7 +21,7 @@ pub struct MyBox {
 }
 
 impl MyBox {
-    pub fn new(p0: Vector3<f32>, p1: Vector3<f32>, ptr: Rc<Material>) -> Self {
+    pub fn new(p0: Vector3<f32>, p1: Vector3<f32>, ptr: Rc<dyn Material>) -> Self {
         let mut list_ptr = HitableList::new();
 
         list_ptr.hitable.push(Box::new(XYRect::new(p0.x, p1.x, p0.y, p1.y, p1.z, ptr.clone())));

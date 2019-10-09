@@ -11,7 +11,7 @@ use super::super::renderer::AABB;
 use super::super::material::Material;
 
 pub struct YZRect {
-    pub mp: Rc<Material>,
+    pub mp: Rc<dyn Material>,
     pub y0: f32,
     pub y1: f32,
     pub z0: f32,
@@ -20,7 +20,7 @@ pub struct YZRect {
 }
 
 impl YZRect {
-    pub fn new(y0: f32, y1: f32, z0: f32, z1: f32, k: f32, mat: Rc<Material>) -> Self {
+    pub fn new(y0: f32, y1: f32, z0: f32, z1: f32, k: f32, mat: Rc<dyn Material>) -> Self {
         Self {
             y0: y0,
             y1: y1,
