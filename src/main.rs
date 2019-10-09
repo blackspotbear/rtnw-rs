@@ -354,8 +354,8 @@ fn cornell_smoke() -> HitableList {
 fn final_scene() -> HitableList {
     let nb = 20;
     let mut list = HitableList::new();
-    let mut boxlist = Vec::<Rc<Hitable>>::new();
-    let mut boxlist2 = Vec::<Rc<Hitable>>::new();
+    let mut boxlist = Vec::<Rc<dyn Hitable>>::new();
+    let mut boxlist2 = Vec::<Rc<dyn Hitable>>::new();
     let white = Rc::new(Lambertian{albedo: Box::new(ConstantTexture::new(vec3(0.73, 0.73, 0.73)))});
     let ground = Rc::new(Lambertian{albedo: Box::new(ConstantTexture::new(vec3(0.48, 0.83, 0.53)))});
 

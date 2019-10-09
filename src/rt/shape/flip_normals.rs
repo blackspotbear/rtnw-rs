@@ -6,7 +6,7 @@ use super::super::renderer::HitRecord;
 use super::super::renderer::AABB;
 
 pub struct FlipNormals {
-    pub ptr: Box<Hitable>
+    pub ptr: Box<dyn Hitable>
 }
 
 impl Hitable for FlipNormals {

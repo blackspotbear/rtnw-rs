@@ -7,13 +7,13 @@ use super::hit_record::HitRecord;
 use super::aabb::AABB;
 
 pub struct BVHNode {
-    left: Rc<Hitable>,
-    right: Rc<Hitable>,
+    left: Rc<dyn Hitable>,
+    right: Rc<dyn Hitable>,
     aabb: AABB
 }
 
 impl BVHNode {
-    pub fn new(l: &mut [Rc<Hitable>], time0: f32, time1: f32) -> Self {
+    pub fn new(l: &mut [Rc<dyn Hitable>], time0: f32, time1: f32) -> Self {
         let axis = (rand::random::<f32>() * 3.0) as i32;
         l.sort_by(|a, b| {
             let aabb_left = a.bounding_box(0.0, 0.0).unwrap();

@@ -19,11 +19,11 @@ pub struct MovingSphere {
     pub time0: f32,
     pub time1: f32,
     pub radius: f32,
-    pub mat: Rc<Material>
+    pub mat: Rc<dyn Material>
 }
 
 impl MovingSphere {
-    pub fn new(cen0: Vector3<f32>, cen1: Vector3<f32>, t0: f32, t1: f32, r: f32, m: Rc<Material>) -> MovingSphere {
+    pub fn new(cen0: Vector3<f32>, cen1: Vector3<f32>, t0: f32, t1: f32, r: f32, m: Rc<dyn Material>) -> MovingSphere {
         MovingSphere {
             center0: cen0,
             center1: cen1,

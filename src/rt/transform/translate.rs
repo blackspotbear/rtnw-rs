@@ -8,12 +8,12 @@ use super::super::renderer::HitRecord;
 use super::super::renderer::AABB;
 
 pub struct Translate {
-    pub ptr: Box<Hitable>,
+    pub ptr: Box<dyn Hitable>,
     pub offset: Vector3<f32>
 }
 
 impl Translate {
-    pub fn new(p: Box<Hitable>, displacement: Vector3<f32>) -> Self {
+    pub fn new(p: Box<dyn Hitable>, displacement: Vector3<f32>) -> Self {
         Translate {
             ptr: p,
             offset: displacement

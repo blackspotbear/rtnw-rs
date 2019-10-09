@@ -15,7 +15,7 @@ pub enum Background {
     Sky
 }
 
-pub fn color(r: &Ray, world: &Hitable, depth: i32, bg: Background) -> Vector3<f32> {
+pub fn color(r: &Ray, world: &dyn Hitable, depth: i32, bg: Background) -> Vector3<f32> {
     // Peter says:
     // Some of the reflected rays hit the object they are reflecting off of
     // not at exactly t=0, but instead at t=-0.0000001 or t=0.00000001 or
